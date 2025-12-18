@@ -3,6 +3,7 @@
     "@rocketseat/eslint-config/node"
   ],
   "rules": {
-    "linebreak-style": ["error", "unix"]
+    "linebreak-style": ["error", "unix"],
+    "camelcase": ["error", { "properties": "never" }]
   }
 }

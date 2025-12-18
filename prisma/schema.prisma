@@ -22,13 +22,13 @@ enum CompanyStatus {
 model Company {
   id              String  @id @default(uuid())
   name            String 
-  trade_name      String  @unique
+  tradeName       String  @unique
   cnpj            String  @unique
-  status          CompanyStatus
+  status          CompanyStatus @default(ACTIVE)
   segmentation    String?
   obs             String?
   address         String?
-  date_of_payment DateTime?
+  dateOfPayment   DateTime?
   created_at      DateTime  @default(now())
   updated_at      DateTime  @updatedAt
 }
