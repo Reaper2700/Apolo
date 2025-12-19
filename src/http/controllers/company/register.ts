@@ -1,7 +1,6 @@
 import type { FastifyReply, FastifyRequest } from 'fastify'
 import z from 'zod'
 import { makeRegisterUserCase } from '../../../usecases/factories/makeRegisterUserCase.js'
-import { ca } from 'zod/locales'
 
 export async function register(request: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({
@@ -20,7 +19,7 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
   try {
     const registerCompanyUseCase = makeRegisterUserCase()
 
-    const { company } = await registerCompanyUseCase.execute({
+    await registerCompanyUseCase.execute({
       name,
       tradeName,
       cnpj,

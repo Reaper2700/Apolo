@@ -1,14 +1,15 @@
-import type { Company } from '@prisma/client'
+import type { Company, CompanyStatus } from '@prisma/client'
 import type { CompanyRepository } from '../../repositories/companyRepository.js'
 
 interface CreateCompanyUseCaseRequest {
   name: string
   tradeName: string
   cnpj: string
-  segmentation: string
-  obs: string
-  address: string
-  dateOfPayment: Date
+  status?: CompanyStatus
+  segmentation?: string
+  obs?: string
+  address?: string
+  dateOfPayment?: Date
 }
 
 interface CreateCompanyUseCaseResponse {
@@ -22,6 +23,7 @@ export class CreateCompanyUseCase {
     name,
     tradeName,
     cnpj,
+    status,
     segmentation,
     obs,
     address,
@@ -31,6 +33,7 @@ export class CreateCompanyUseCase {
       name,
       tradeName,
       cnpj,
+      status,
       segmentation,
       obs,
       address,

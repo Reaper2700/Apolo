@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:dev": "eslint . --fix && tsx watch src/server.ts",
+    "start:dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build"
   },
@@ -20,7 +20,7 @@
     "prisma": "^7.2.0",
     "tsup": "^8.5.1",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.2.0",
